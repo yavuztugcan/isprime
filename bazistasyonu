@@ -1,0 +1,22 @@
+clc;
+clear all;
+
+
+%Istanbul'un ilçelerinin popülasyon verisi
+popu= [957398 789633 737206  726481 713803 592371 537488 520771 515021 487778 481983 474514 469924 456861 ...
+446276 442415 436897 422594 405845 396594 365572 343318 335298 296709 283657 280299 273658 273608 ...
+269950 266793 257362 246110 226396 226229 200215 176513 74975 37904 16033]' ;
+
+
+toplam=0;
+
+%Herkesin aynı anda bağlantı kurabileceğini düşünürsek
+popubaz=popu./440;
+
+for i=1:length(popubaz)
+        
+    toplam=toplam + popubaz(i);
+    
+end
+
+fprintf('Tahminlerime göre %0.0f tane baz istasyonu olmalı.\n', toplam);
